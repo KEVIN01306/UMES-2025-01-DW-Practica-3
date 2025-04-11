@@ -1,6 +1,6 @@
 <?php
 include 'controller.recetas.php';
-include '../../class/class.recetas-saladas.php';
+include_once '../../class/class.recetas-saladas.php';
 class ControllerRecetasSaladas extends ControllerRecetas {
 
     private string $fileRute;

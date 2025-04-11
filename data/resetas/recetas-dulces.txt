@@ -1,5 +1,5 @@
-receta1.jpg,Brownies de Chocolate,Brownies suaves y húmedos con un intenso sabor a chocolate.,Harina de trigo,Cacao en polvo,Mantequilla y azúcar
-receta2.jpg,Cheesecake de Fresa,Tarta de queso con una base de galleta y cubierta de fresas.,Queso crema,Galletas trituradas,Fresas frescas
-receta3.jpg,Donas Glaseadas,Deliciosas donas esponjosas con glaseado de azúcar.,Harina de trigo,Levadura y leche,Glaseado de azúcar
-receta4.jpg,Tiramisú Clásico,Postre italiano con capas de café, mascarpone y cacao.,Café espresso,Queso mascarpone,Cacao en polvo
-receta5.jpg,Helado Casero,Helado cremoso de vainilla con trozos de chocolate.,Leche y crema,Vainilla natural,Trozos de chocolate
+receta1.jpg;Brownies de Chocolate;Brownies suaves y húmedos con un intenso sabor a chocolate.;Harina de trigo;Cacao en polvo;Mantequilla y azúcar
+receta2.jpg;Cheesecake de Fresa;Tarta de queso con una base de galleta y cubierta de fresas.;Queso crema;Galletas trituradas;Fresas frescas
+receta3.jpg;Donas Glaseadas;Deliciosas donas esponjosas con glaseado de azúcar;Harina de trigo;Levadura y leche;Glaseado de azúcar
+receta4.jpg;Tiramisú Clásico;Postre italiano con capas de café, mascarpone y cacao;Café espresso;Queso mascarpone;Cacao en polvo
+receta5.jpg;Helado Casero;Helado cremoso de vainilla con trozos de chocolate.;Leche y crema;Vainilla natural;Trozos de chocolate

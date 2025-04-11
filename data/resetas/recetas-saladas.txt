@@ -1,0 +1,5 @@
+receta6.jpg;Pizza Margarita;Pizza con salsa de tomate, mozzarella y albahaca fresca;Harina de trigo;Levadura;Salsa de tomate;Queso mozzarella;Albahaca fresca
+receta7.jpg;Hamburguesa Clásica;Carne jugosa. queso cheddar y vegetales frescos en pan artesanal.;Pan de hamburguesa;Carne de res molida;Queso cheddar;Lechuga y tomate,Salsa de tu elección
+receta8.jpg;Tacos de Carne Asada;Tortillas con carne marinada, cilantro, cebolla y salsa.;Tortillas de maíz;Carne de res;Cilantro y cebolla;Salsa roja o verde;Limón
+receta9.jpg;Pasta Alfredo;Pasta con salsa Alfredo cremosa y pollo a la parrilla.;Pasta fettuccine;Crema de leche;Queso parmesano;Pollo a la parrilla;Ajo y mantequilla
+receta10.jpg;Empanadas de Pollo;Masa crujiente rellena de pollo sazonado y queso derretido.;Masa para empanadas;Pollo desmenuzado;Queso rallado;Cebolla y pimiento;Aceite para freír

@@ -28,7 +28,7 @@ class ControllerRecetas {
         }
         $listRecetas = [];
         while (($textLine = fgets($dataLoad)) != false ){
-            $fila = explode(",",$textLine);
+            $fila = explode(";",$textLine);
             $listRecetas[] =( $this->trasformObject(
                 $fila[0],
                 $fila[1],
