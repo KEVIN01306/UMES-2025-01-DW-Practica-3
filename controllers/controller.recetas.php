@@ -1,5 +1,5 @@
 <?php
-include '../class/class.recetas.php';
+include_once '../../class/class.recetas.php';
 
 class ControllerRecetas {
 
@@ -21,29 +21,24 @@ class ControllerRecetas {
         return new Recetas($image,$titulo,$descripcion,$ingredientes);
     }
 
-    public function splitArray(string $textLine){
-        return $textLine.splitArray(',');
-    }
-
     public function processData(){
         $dataLoad = $this->loadData();
         if (!is_resource($dataLoad)){
             return "error al procesar el archivo";
         }
         $listRecetas = [];
-        while (($fila = fgets($dataLoad)) != false ){
-            echo htmlspecialchars(trim($fila)) . "<br>";
-            $listRecetas.array_push( $this->trasformObject(
-
+        while (($textLine = fgets($dataLoad)) != false ){
+            $fila = explode(",",$textLine);
+            $listRecetas[] =( $this->trasformObject(
+                $fila[0],
+                $fila[1],
+                $fila[2],
+                array_slice($fila,3)
             ));
         }
-
+        fclose($dataLoad);
+        return $listRecetas;
     }
 }
-
-$eje = new ControllerRecetas('../data/resetas/recetas-dulces.txt');
-
-echo $eje->processData()
-
 
 ?>

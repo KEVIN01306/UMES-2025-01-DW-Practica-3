@@ -1,5 +1,5 @@
 <?php 
-include './class.recetas.php';
+include_once '../../class/class.recetas.php';
 
 class RecetasDulces extends Recetas{
 

@@ -1,3 +1,8 @@
+<?php 
+include '../../controllers/controller.recetas-dulces.php';
+$recetasDulces = new ControllerRecetasDulces('../../data/resetas/recetas-dulces.txt');
+$recetasDulcesList = $recetasDulces->processData();
+?>
 <!DOCTYPE html>
 <html lang="es">
 <head>
@@ -45,10 +50,10 @@
                 <a class="nav-link " href="../personal/personal.html">Personal</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link active" href="recetasDulces.html">Recetas Dulces</a>
+                <a class="nav-link active" href="recetasDulces.php">Recetas Dulces</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" href="recetasSaladas.html">Recetas Saladas</a>
+                <a class="nav-link" href="recetasSaladas.php">Recetas Saladas</a>
             </li>
             </ul>
         </div>
@@ -70,72 +75,21 @@
     <hr>
     <hr>
     <div class="row justify-content-center con-sepa">
+        <?php foreach($recetasDulcesList as $receta){?>
         <div class="card bg-dark text-white col-11 col-md-5">
-            <img src="../../assets/img/recetas/receta1.jpg" class="card-img-top card-fuid" alt="...">
+            <img src="../../assets/img/recetas/<?php echo $receta->getImagen();?>" class="card-img-top card-fuid" alt="...">
             <div class="card-body">
-                <h5 class="card-title carta-letra color-yellow">Brownies de Chocolate</h5>
-                <p class="card-text">Brownies suaves y húmedos con un intenso sabor a chocolate.</p>
+                <h5 class="card-title carta-letra color-yellow"><?php echo $receta->getTitilo();?></h5>
+                <p class="card-text"><?php echo $receta->getDescripcion();?></p>
             </div>
             <ul class="list-group list-group-flush bg-dark text-white">
                 <li class="list-group-item bg-dark text-white"><p class="carta-letra color-yellow m-0">Ingredientes</p></li>
-                <li class="list-group-item bg-dark text-white">Harina de trigo</li>
-                <li class="list-group-item bg-dark text-white">Cacao en polvo</li>
-                <li class="list-group-item bg-dark text-white">Mantequilla y azúcar</li>
+                <?php foreach($receta->getIngredientes() as $ingrediente){?>
+                <li class="list-group-item bg-dark text-white"><?php echo $ingrediente?></li>
+                <?php };?>
             </ul>
         </div>
-        <div class="card bg-dark text-white col-11 col-md-5">
-            <img src="../../assets/img/recetas/receta2.jpg" class="card-img-top" alt="...">
-            <div class="card-body">
-                <h5 class="card-title carta-letra color-yellow">Cheesecake de Fresa</h5>
-                <p class="card-text">Tarta de queso con una base de galleta y cubierta de fresas.</p>
-            </div>
-            <ul class="list-group list-group-flush bg-dark text-white">
-                <li class="list-group-item bg-dark text-white"><p class="carta-letra color-yellow m-0">Ingredientes</p></li>
-                <li class="list-group-item bg-dark text-white">Queso crema</li>
-                <li class="list-group-item bg-dark text-white">Galletas trituradas</li>
-                <li class="list-group-item bg-dark text-white">Fresas frescas</li>
-            </ul>            
-        </div>
-        <div class="card bg-dark text-white col-11 col-md-5">
-            <img src="../../assets/img/recetas/receta3.jpg" class="card-img-top" alt="...">
-            <div class="card-body">
-                <h5 class="card-title carta-letra color-yellow">Donas Glaseadas</h5>
-                <p class="card-text">Deliciosas donas esponjosas con glaseado de azúcar.</p>
-            </div>
-            <ul class="list-group list-group-flush bg-dark text-white">
-                <li class="list-group-item bg-dark text-white"><p class="carta-letra color-yellow m-0">Ingredientes</p></li>
-                <li class="list-group-item bg-dark text-white">Harina de trigo</li>
-                <li class="list-group-item bg-dark text-white">Levadura y leche</li>
-                <li class="list-group-item bg-dark text-white">Glaseado de azúcar</li>
-            </ul>
-        </div>
-        <div class="card bg-dark text-white col-11 col-md-5">
-            <img src="../../assets/img/recetas/receta4.jpg" class="card-img-top" alt="...">
-            <div class="card-body">
-                <h5 class="card-title carta-letra color-yellow">Tiramisú Clásico</h5>
-                <p class="card-text">Postre italiano con capas de café, mascarpone y cacao.</p>
-            </div>
-            <ul class="list-group list-group-flush bg-dark text-white">
-                <li class="list-group-item bg-dark text-white"><p class="carta-letra color-yellow m-0">Ingredientes</p></li>
-                <li class="list-group-item bg-dark text-white">Café espresso</li>
-                <li class="list-group-item bg-dark text-white">Queso mascarpone</li>
-                <li class="list-group-item bg-dark text-white">Cacao en polvo</li>
-            </ul>
-        </div>
-        <div class="card bg-dark text-white col-11 col-md-5">
-            <img src="../../assets/img/recetas/receta5.jpg" class="card-img-top" alt="...">
-            <div class="card-body">
-                <h5 class="card-title carta-letra color-yellow">Helado Casero</h5>
-                <p class="card-text">Helado cremoso de vainilla con trozos de chocolate.</p>
-            </div>
-            <ul class="list-group list-group-flush bg-dark text-white">
-                <li class="list-group-item bg-dark text-white"><p class="carta-letra color-yellow m-0">Ingredientes</p></li>
-                <li class="list-group-item bg-dark text-white">Leche y crema</li>
-                <li class="list-group-item bg-dark text-white">Vainilla natural</li>
-                <li class="list-group-item bg-dark text-white">Trozos de chocolate</li>
-            </ul>
-        </div>
-    </div>
+        <?php };?>
 
     <footer class="d-flex flex-wrap justify-content-between align-items-center py-3 my-4 border-top p-2 bg-dark">
         <div class="col-md-4 d-flex align-items-center">

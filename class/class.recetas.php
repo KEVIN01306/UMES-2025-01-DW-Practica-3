@@ -24,7 +24,7 @@ class Recetas {
         return $this->titulo;
     }
 
-    public function geDescripcion() : string {
+    public function getDescripcion() : string {
         return $this->descripcion;
     }
 
