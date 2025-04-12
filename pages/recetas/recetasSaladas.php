@@ -55,6 +55,9 @@ $recetasSaladasList = $recetasSaladas->processData();
             <li class="nav-item">
                 <a class="nav-link active" href="recetasSaladas.php">Recetas Saladas</a>
             </li>
+            <li class="nav-item">
+                <a class="nav-link " href="../reservaciones/reservaciones.php">Reservaciones</a>
+            </li>
             </ul>
         </div>
         </div>

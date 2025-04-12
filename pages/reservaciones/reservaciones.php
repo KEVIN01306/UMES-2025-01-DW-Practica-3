@@ -50,6 +50,9 @@
             <li class="nav-item">
                 <a class="nav-link " href="../recetas/recetasSaladas.php">Recetas Saladas</a>
             </li>
+            <li class="nav-item">
+                <a class="nav-link " href="./reservaciones.php">Reservaciones</a>
+            </li>
             </ul>
         </div>
         </div>
