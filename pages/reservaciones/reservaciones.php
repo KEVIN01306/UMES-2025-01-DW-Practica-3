@@ -77,6 +77,44 @@ $resercaslist = $reservas->processData();
     </div>
     <hr>
     <hr>
+    <button type="button" class="btn btn-outline-primary m-4" data-bs-toggle="modal" data-bs-target="#exampleModal" data-bs-whatever="@mdo">Hacer Reserva</button>
+    <div class="modal fade " id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog bg-dark rounded ">
+            <div class="modal-content">
+            <div class="modal-header bg-dark text-white">
+                <h1 class="modal-title fs-5 carta-letra color-yellow" id="exampleModalLabel">Hacer Reservarcion</h1>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body bg-dark text-white">
+                <form method="post" id="formReserva" action="./reservaConfig.php">
+                    <div class="mb-3">
+                        <label for="nombre" class="col-form-label carta-letra color-yellow">Nombre:</label>
+                        <input type="text" class="form-control " id="nombre" name="nombre" required>
+                    </div>
+                    <div class="mb-3">
+                        <label for="numero" class="col-form-label carta-letra color-yellow">Numero:</label>
+                        <input type="number" class="form-control " id="numero" name="numero" required>
+                    </div>
+                    <div class="mb-3">
+                        <label for="fecha_reserva" class="col-form-label carta-letra color-yellow">Fecha de reserva:</label>
+                        <input type="date" class="form-control " id="fecha_reserva" name="fecha_reserva" required>
+                    </div>
+                    <div class="mb-3">
+                        <label for="hora_reserva" class="col-form-label carta-letra color-yellow">Hora de reserva:</label>
+                        <input type="time" class="form-control " id="hora_reserva" name="hora_reserva" required>
+                    </div>
+                    <div class="mb-3">
+                        <label for="descripcion" class="col-form-label carta-letra color-yellow">Descripcion:</label>
+                        <textarea class="form-control" id="descripcion" name="descripcion"></textarea>
+                    </div>
+                    <div class="modal-footer bg-dark text-white">
+                        <button type="submit" class="btn btn-outline-primary">Reservar</button>
+                    </div>
+                </form>
+            </div>
+            </div>
+        </div>
+    </div>
     <div class="row justify-content-center con-sepa">
         <?php foreach ($resercaslist as $reserva){?>
         <div class="card col-12 col-md-6 col-lg-4 bg-dark m-1" style="width: 18rem;">
