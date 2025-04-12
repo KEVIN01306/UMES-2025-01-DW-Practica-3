@@ -1,6 +1,6 @@
 <?php
 
-class Reserba {
+class Reserva {
 
     private string $nombre;
     private string $Telefono;

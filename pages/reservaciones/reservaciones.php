@@ -1,3 +1,8 @@
+<?php
+include '../../controllers/controller.reservaciones.php';
+$reservas = new ControllerRecervas('../../data/reservaciones/reservaciones.txt');
+$resercaslist = $reservas->processData();
+?>
 <!DOCTYPE html>
 <html lang="es">
 <head>
@@ -39,7 +44,7 @@
                 <a class="nav-link " href="../menu/platosFuertes.html">Platos Fuertes</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link active" href="resenias.html">Reseñas</a>
+                <a class="nav-link" href="resenias.html">Reseñas</a>
             </li>
             <li class="nav-item">
                 <a class="nav-link" href="../personal/personal.html">Personal</a>
@@ -51,7 +56,7 @@
                 <a class="nav-link " href="../recetas/recetasSaladas.php">Recetas Saladas</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link " href="./reservaciones.php">Reservaciones</a>
+                <a class="nav-link active" href="./reservaciones.php">Reservaciones</a>
             </li>
             </ul>
         </div>
@@ -73,16 +78,21 @@
     <hr>
     <hr>
     <div class="row justify-content-center con-sepa">
+        <?php foreach ($resercaslist as $reserva){?>
         <div class="card col-12 col-md-6 col-lg-4 bg-dark m-1" style="width: 18rem;">
             <img src="../../assets/img/reservaciones/image.png" class="card-img-top" alt="...">
             <div class="card-body">
                 <h5 class="card-title carta-letra color-yellow">Descripcion</h5>
-                <p class="card-text text-white">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                <p class="card-text text-white"><?php echo $reserva->getDescripcion()?></p>
             </div>
             <ul class="list-group-dark list-group-flush">
-                <li class="list-group-item text-white"><span class="carta-letra  color-yellow">Nombre: </span>An item</li>
+                <li class="list-group-item text-white"><span class="carta-letra  color-yellow">Nombre: </span><?php echo $reserva->getNombre()?></li>
+                <li class="list-group-item text-white"><span class="carta-letra  color-yellow">Numero: </span><?php echo $reserva->getTelefono()?></li>
+                <li class="list-group-item text-white"><span class="carta-letra  color-yellow">Fecha: </span><?php echo $reserva->getFechaReserva()?></li>
+                <li class="list-group-item text-white"><span class="carta-letra  color-yellow">Hora: </span><?php echo $reserva->getHoraReserva()?></li>
             </ul>
         </div>
+        <?php }?>
     </div>
 
     <footer class="d-flex flex-wrap justify-content-between align-items-center py-3 my-4 border-top p-2 bg-dark">
